@@ -5,10 +5,10 @@
     <title>HTML Academy: Барбершоп</title>
   </head>
 
-  <body>
+  <body style="background-color: gray;">
     <header>
       <a href="index.html">
-        <img src="https://via.placeholder.com/111x24" width="111" height="24" alt="Логотип барбершопа «Бородинский»">
+        <img src="img/logo-small.svg" width="111" height="24" alt="Логотип барбершопа «Бородинский»">
       </a>
       <nav>
         <ul>
@@ -20,22 +20,27 @@
         </ul>
         <ul>
           <li>
-            <button type="button">Вход</button>
+            <!-- <button type="button">Вход</button> -->
+            <!-- Используем фоллбэк - если включен js - показываем попап, если нет - переход на страницу входа -->
+            <a href="login.html">Вход</a>
           </li>
         </ul>
       </nav>
     </header>
 
+
     <main>
 
       <h1>набор для путешествий «Baxter of California»</h1>
       <!-- Крошки -->
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="catalog.html">Магазин</a></li>
-        <li><a href="catalog.html">Средства для ухода</a></li>
-        <li>набор для путешествий «Baxter of California»</li>
-      </ul>
+      <nav aria-label="Хлебные крошки">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Магазин</a></li>
+          <li><a href="catalog.html">Средства для ухода</a></li>
+          <li aria-current="page">набор для путешествий «Baxter of California»</li>
+        </ul>
+      </nav>
 
       <!-- Блок с изображениями -->
       <section>
@@ -97,6 +102,35 @@
         <a href="#">HTML academy</a>
       </p>
     </footer>
+
+    <section>
+      <h2>Личный кабинет</h2>
+      <p>Введите пожалуйста свой логин и пароль</p>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <!-- У HTML-academy вместо aria-label используется label и visually-hidden -->
+        <label aria-label="Логин">
+          <input type="text" name="login" placeholder="Логин">
+        </label>
+        <label aria-label="Пароль">
+          <input type="password" name="password" placeholder="••••••••">
+        </label>
+        <label>
+          <input type="checkbox" name="remember-me">
+          Запомните меня
+        </label>
+        <button type="button">Я забыл пароль!</button>
+        <button type="submit">Войти</button>
+      </form>
+      <button type="button">Закрыть</button>
+    </section>
+
+    <section>
+      <h2>Как нас найти</h2>
+      <p>
+        <img src="img/map.png" alt="ул. Большая Конюшенная 19">
+      </p>
+      <button type="button">Закрыть</button>
+    </section>
 
   </body>
 </html>
