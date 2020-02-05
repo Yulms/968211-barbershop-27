@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Барбершоп</title>
+    <!-- на вебсервере использовать атрибут crossorigin="" -->
+    <!-- <link rel="preload" href="fonts/pt-sans-narrow-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2"> -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
     <header>
-      <a href="">
-        <img src="https://via.placeholder.com/371x155" width="371" height="155" alt="Логотип барбершопа «Бородинский»">
+      <a>
+        <img src="img/index-logo.svg" width="371" height="155" alt="Логотип барбершопа «Бородинский»">
       </a>
       <nav>
         <ul>
@@ -20,7 +24,9 @@
         </ul>
         <ul>
           <li>
-            <button type="button">Вход</button>
+            <!-- <button type="button">Вход</button> -->
+            <!-- Используем фоллбэк - если включен js - показываем попап, если нет - переход на страницу входа -->
+            <a href="login.html">Вход</a>
           </li>
         </ul>
       </nav>
@@ -69,7 +75,7 @@
         <h2>Фотогалерея</h2>
         <figure>
           <a href="#">
-            <img src="https://via.placeholder.com/286x164" width="286" height="164" alt="Изображение интерьера">
+            <img src="img/photo-gallery.jpg" width="286" height="164" alt="Изображение интерьера">
           </a>
         </figure>
         <button type="button">Назад</button>
@@ -83,7 +89,7 @@
           ТЕЛЕФОН: +7 (495) 666-02-66
         </p>
         <p>
-          ВРЕМЯ РАБОТЫ:<bt>
+          ВРЕМЯ РАБОТЫ:<br>
           ПН—ПТ: С 10:00 ДО 22:00<br>
           СБ—ВС: С 10:00 ДО 19:00
         </p>
@@ -93,7 +99,34 @@
 
       <section>
         <h2>Записаться</h2>
-        <p>УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</p>
+        <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
+        <form action="https://echo.htmlacademy.ru" method="post">
+          <p>
+            <label>
+              Дата
+              <input type="date" name="date-input" value="2017-10-08">
+            </label>
+          </p>
+          <p>
+            <label>
+              Время
+              <input type="time" name="time-input" value="10:00">
+            </label>
+          </p>
+          <p>
+            <label>
+              Ваше имя
+              <input type="text" name="name-input" placeholder="Борода">
+            </label>
+          </p>
+          <p>
+            <label>
+              Телефон
+              <input type="text" name="tel-input" placeholder="+7 123 456-78-90">
+            </label>
+          </p>
+          <button type="submit">Отправить</button>
+        </form>
       </section>
     </main>
 
@@ -108,17 +141,64 @@
       <div>
         <p>Давайте дружить</p>
         <ul>
-          <li><a href="#">Вконтакте</a></li>
-          <li><a href="#">Фэйсбук</a></li>
-          <li><a href="#">Инстаграм</a></li>
+          <!-- В оринигале ссылки организованы background-image -->
+          <li>
+            <a href="#">
+              <img src="img/vk.svg" width="27" height="15" alt="Вконтакте">
+              <span>Наша группа Вконтакте</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/facebook.svg" width="11" height="22" alt="Фэйсбук">
+              <span>Наша группа в Фэйсбук</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/instagram.svg" width="20" height="20" alt="Инстаграм">
+              <span>Наша группа в Инстраграм</span>
+            </a>
+          </li>
         </ul>
       </div>
 
       <p>
-        Разработано
+        <span>Разработано</span>
         <a href="#">HTML academy</a>
       </p>
     </footer>
+
+
+
+    <section>
+      <h2>Личный кабинет</h2>
+      <p>Введите пожалуйста свой логин и пароль</p>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <!-- У HTML-academy вместо aria-label используется label и visually-hidden -->
+        <label aria-label="Логин">
+          <input type="text" name="login" placeholder="Логин">
+        </label>
+        <label aria-label="Пароль">
+          <input type="password" name="password" placeholder="••••••••">
+        </label>
+        <label>
+          <input type="checkbox" name="remember-me">
+          Запомните меня
+        </label>
+        <button type="button">Я забыл пароль!</button>
+        <button type="submit">Войти</button>
+      </form>
+      <button type="button">Закрыть</button>
+    </section>
+
+    <section>
+      <h2>Как нас найти</h2>
+      <p>
+        <img src="img/map.png" alt="ул. Большая Конюшенная 19">
+      </p>
+      <button type="button">Закрыть</button>
+    </section>
 
   </body>
 </html>
